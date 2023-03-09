@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Your Audiobook</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://img.icons8.com/external-nawicon-glyph-nawicon/64/FFFFFF/external-audiobook-online-learning-nawicon-glyph-nawicon.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <img src="https://img.icons8.com/external-nawicon-flat-nawicon/64/null/external-audiobook-online-learning-nawicon-flat-nawicon.png"/> -->
+    <style>
+      html,
+      * {
+        padding: 0px;
+        margin: 0px;
+        color: rgb(43, 43, 43);
+        font-family: "Josefin Sans", sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(231, 231, 231);
+        background: rgb(241, 241, 241);
+      }
+      .main1 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+        font-weight: bolder;
+      }
+      .main2 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        display: none;
+      }
+      button {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        /* padding: 7px; */
+        /* width: 60px;
+        height: 60px; */
+        padding: 0px;
+        margin: 0px;
+        /* border: 2px solid red; */
+        /* background: black; */
+        width: 60px;
+        height: 60px;
+        background-color: rgb(43, 43, 43);
+        box-shadow: 5px 5px 15px rgba(43, 43, 43, 0.377);
+        cursor: pointer;
+      }
+      button:hover {
+        transform: scale(1.04);
+      }
+      button > img {
+        transform: rotate(180deg);
+        /* border: 1px solid red; */
+        width: 70%;
+        height: 70%;
+      }
+      label {
+        display: block;
+        width: 200px;
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        background-color: rgb(43, 43, 43);
+        color: rgb(241, 241, 241);
+        /* height: 12%; */
+        font-size: 24px;
+        box-shadow: 5px 5px 15px rgba(43, 43, 43, 0.377);
+        cursor: pointer;
+      }
+      label:hover {
+        transform: scale(1.02);
+      }
+      .word3 {
+        background-color: rgb(43, 43, 43);
+        color: rgb(241, 241, 241);
+      }
+      @media screen and (max-width: 800px) {
+        body {
+          flex-direction: column;
+        }
+        body > * {
+          width: 100%;
+          height: auto;
+        }
+        .main1 {
+          height: 65%;
+          font-size: 60px;
+        }
+        .main2 {
+          height: 35%;
+        }
+        .main2 label {
+          width: 150px;
+          height: 60px;
+        }
+        .main2 button {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      @media screen and (min-width: 800px) and (max-width: 1000px) {
+        .main1 {
+          font-size: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main1">
+      <span class="word1">Upload</span>
+      <span class="word2">Your</span>
+      <span class="word3"> Pdf </span>
+      <span class="word4">Here!</span>
+      <!-- <span class="word4">Get</span>
+      <span class="word5">Your</span>
+      <span class="word6">Audiobook</span> -->
+    </div>
+    <div class="main2">
+      <form action="player" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file">Upload</label>
+        <input type="file" name="file" id="file" /> <br /><br />
+        <!-- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -->
+        <button type="submit">
+          <img
+            src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/chevron-left.png"
+          />
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
